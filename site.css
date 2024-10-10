@@ -1,0 +1,107 @@
+﻿/* General body styling */
+body {
+    background-color: #f9f9f9;
+    font-family: 'Poppins', sans-serif;
+    color: #444;
+    margin: 0;
+    padding: 0;
+}
+
+/* Custom styles for the navigation bar */
+.navbar {
+    background-color: #ff5722; /* Vibrant Orange */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    color: #fff !important;
+    font-weight: bold;
+    font-size: 26px;
+    letter-spacing: 1px;
+}
+
+.navbar-nav .nav-link {
+    color: #fff !important;
+    font-weight: 500;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+    .navbar-nav .nav-link:hover {
+        color: #ffccbc !important; /* Lighter Orange */
+    }
+
+/* Footer styling */
+.footer {
+    background-color: #00796b; /* Rich Teal */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+    /* Footer Links */
+    .footer a {
+        color: #80cbc4;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+        .footer a:hover {
+            color: #e0f2f1;
+            text-decoration: underline;
+        }
+
+/* Main content section */
+main {
+    background-color: #fff;
+    padding: 30px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    margin-top: 20px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Button styles */
+.btn-primary {
+    background-color: #ff4081; /* Vibrant Pink */
+    border: none;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+}
+
+    .btn-primary:hover {
+        background-color: #f50057;
+    }
+
+/* Smooth animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Additional styles for responsiveness */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 22px;
+    }
+
+    .footer {
+        padding: 10px 0;
+    }
+
+    .navbar-nav .nav-link {
+        margin-right: 0;
+        padding: 10px;
+    }
+}

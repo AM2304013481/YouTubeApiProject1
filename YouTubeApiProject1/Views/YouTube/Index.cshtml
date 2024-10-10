@@ -1,0 +1,44 @@
+﻿@model List<YouTubeApiProject1.Models.YouTubeVideoModel>
+
+<!-- Page Container with YouTube Color Coding -->
+<div class="container-fluid" style="background-image: url('/images/background.jpg'); background-size: cover; background-position: center; min-height: 100vh; font-family: 'Roboto', sans-serif;">
+    <div class="container py-5" style="background-color: rgba(255, 255, 255, 0.9); border-radius: 15px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+        <h2 class="text-center mb-4" style="color: #FF0000; font-family: 'Poppins', sans-serif;">Search YouTube Videos</h2>
+
+        <!-- Search Form -->
+        <form asp-action="Search" method="post" class="d-flex justify-content-center mb-4">
+            <input type="text" name="query" class="form-control me-2" placeholder="Search for videos..." style="max-width: 400px; border-color: #FF0000;" />
+            <button type="submit" class="btn btn-danger" style="background-color: #FF0000; border-color: #CC0000; font-family: 'Poppins', sans-serif;">Search</button>
+        </form>
+
+        <!-- Video Results Section -->
+        @if (Model != null && Model.Any())
+        {
+            <div class="row">
+                @foreach (var video in Model)
+                {
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 shadow-sm" style="border-color: #FF0000;">
+                            <img src="@video.ThumbnailUrl" alt="@video.Title" class="card-img-top" style="border-bottom: 3px solid #FF0000;" />
+                            <div class="card-body" style="background-color: #f9f9f9;">
+                                <h5 class="card-title" style="color: #333; font-family: 'Poppins', sans-serif;">@video.Title</h5>
+                                <p class="card-text" style="color: #555;">@video.Description</p>
+                                <br />
+                                <a href="@video.VideoUrl">
+                                    <button type="button">Watch</button>
+                             
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <div class="text-center mt-4">
+                <p style="color: #FF0000; font-family: 'Roboto', sans-serif;">No videos found. Try searching for something else!</p>
+            </div>
+        }
+    </div>
+</div>
